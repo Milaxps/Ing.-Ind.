@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malla Interactiva</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Malla Interactiva - Ingeniería Industrial</h1>
+    <div class="container">
+        <!-- PRIMER SEMESTRE -->
+        <div class="semester" id="sem1">
+            <h2>1er Semestre</h2>
+            <div class="subject unlocked" data-id="calculo_dif">Cálculo Diferencial</div>
+            <div class="subject unlocked" data-id="algebra_lin">Álgebra Lineal</div>
+            <div class="subject unlocked" data-id="ing_metodos">Ingeniería de Métodos</div>
+            <div class="subject unlocked" data-id="antropologia">Antropología Filosófico-Teológica</div>
+            <div class="subject unlocked" data-id="comunicacion">Comunicación Oral y Escrita</div>
+            <div class="subject unlocked" data-id="ingles_a1">Inglés A1</div>
+        </div>
+
+        <!-- SEGUNDO SEMESTRE -->
+        <div class="semester" id="sem2">
+            <h2>2do Semestre</h2>
+            <div class="subject" data-id="calculo_int" data-req="calculo_dif">Cálculo Integral</div>
+            <div class="subject" data-id="quimica" data-req="">Química</div>
+            <div class="subject" data-id="estatica" data-req="algebra_lin">Estática</div>
+            <div class="subject" data-id="dibujo" data-req="">Dibujo Industrial</div>
+            <div class="subject" data-id="etica" data-req="">Ética</div>
+            <div class="subject" data-id="ingles_a2" data-req="ingles_a1">Inglés A2</div>
+        </div>
+
+        <!-- TERCER SEMESTRE -->
+        <div class="semester" id="sem3">
+            <h2>3er Semestre</h2>
+            <div class="subject" data-id="ecuaciones" data-req="calculo_int">Ecuaciones Diferenciales</div>
+            <div class="subject" data-id="programacion" data-req="">Programación</div>
+            <div class="subject" data-id="proc_man1" data-req="estatica">Procesos de Manufactura I</div>
+            <div class="subject" data-id="org_sistemas" data-req="ing_metodos">Organización de Sistemas Productivos</div>
+            <div class="subject" data-id="vida" data-req="">Vida y Trascendencia</div>
+            <div class="subject" data-id="ingles_b1" data-req="ingles_a2">Inglés B1</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
