@@ -1,50 +1,114 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malla Interactiva</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Malla Interactiva - Ingeniería Industrial</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-    <h1>Malla Interactiva - Ingeniería Industrial</h1>
-    <div class="container">
-        <!-- PRIMER SEMESTRE -->
-        <div class="semester" id="sem1">
-            <h2>1er Semestre</h2>
-            <div class="subject unlocked" data-id="calculo_dif">Cálculo Diferencial</div>
-            <div class="subject unlocked" data-id="algebra_lin">Álgebra Lineal</div>
-            <div class="subject unlocked" data-id="ing_metodos">Ingeniería de Métodos</div>
-            <div class="subject unlocked" data-id="antropologia">Antropología Filosófico-Teológica</div>
-            <div class="subject unlocked" data-id="comunicacion">Comunicación Oral y Escrita</div>
-            <div class="subject unlocked" data-id="ingles_a1">Inglés A1</div>
-        </div>
-
-        <!-- SEGUNDO SEMESTRE -->
-        <div class="semester" id="sem2">
-            <h2>2do Semestre</h2>
-            <div class="subject" data-id="calculo_int" data-req="calculo_dif">Cálculo Integral</div>
-            <div class="subject" data-id="quimica" data-req="">Química</div>
-            <div class="subject" data-id="estatica" data-req="algebra_lin">Estática</div>
-            <div class="subject" data-id="dibujo" data-req="">Dibujo Industrial</div>
-            <div class="subject" data-id="etica" data-req="">Ética</div>
-            <div class="subject" data-id="ingles_a2" data-req="ingles_a1">Inglés A2</div>
-        </div>
-
-        <!-- TERCER SEMESTRE -->
-        <div class="semester" id="sem3">
-            <h2>3er Semestre</h2>
-            <div class="subject" data-id="ecuaciones" data-req="calculo_int">Ecuaciones Diferenciales</div>
-            <div class="subject" data-id="programacion" data-req="">Programación</div>
-            <div class="subject" data-id="proc_man1" data-req="estatica">Procesos de Manufactura I</div>
-            <div class="subject" data-id="org_sistemas" data-req="ing_metodos">Organización de Sistemas Productivos</div>
-            <div class="subject" data-id="vida" data-req="">Vida y Trascendencia</div>
-            <div class="subject" data-id="ingles_b1" data-req="ingles_a2">Inglés B1</div>
-        </div>
+  <header class="topbar">
+    <h1>Malla Interactiva – Ingeniería Industrial</h1>
+    <div class="actions">
+      <button id="resetBtn" class="btn-reset" title="Borrar tu progreso">Reiniciar</button>
     </div>
+  </header>
 
-    <script src="script.js"></script>
+  <p class="hint">
+    Toca un ramo para <strong>aprobarlo</strong>. Si es prerrequisito, <strong>desbloquea</strong> los que dependan de él.
+  </p>
+
+  <main id="grid" class="grid">
+    <!-- 1 -->
+    <section class="semester" data-sem="1">
+      <h2>1er Semestre</h2>
+      <div class="subject" data-id="calculo_dif">Cálculo Diferencial</div>
+      <div class="subject" data-id="algebra_lin">Álgebra Lineal</div>
+      <div class="subject" data-id="ing_metodos">Ingeniería de Métodos</div>
+      <div class="subject" data-id="antropologia">Antropología Filosófico-Teológica</div>
+      <div class="subject" data-id="comunicacion">Comunicación Oral y Escrita</div>
+      <div class="subject" data-id="ingles_a1">Inglés A1</div>
+    </section>
+
+    <!-- 2 -->
+    <section class="semester" data-sem="2">
+      <h2>2do Semestre</h2>
+      <div class="subject" data-id="calculo_int" data-req="calculo_dif">Cálculo Integral</div>
+      <div class="subject" data-id="quimica">Química</div>
+      <div class="subject" data-id="estatica" data-req="algebra_lin">Estática</div>
+      <div class="subject" data-id="dibujo">Dibujo Industrial</div>
+      <div class="subject" data-id="etica">Ética</div>
+      <div class="subject" data-id="ingles_a2" data-req="ingles_a1">Inglés A2</div>
+    </section>
+
+    <!-- 3 -->
+    <section class="semester" data-sem="3">
+      <h2>3er Semestre</h2>
+      <div class="subject" data-id="ecuaciones" data-req="calculo_int">Ecuaciones Diferenciales</div>
+      <div class="subject" data-id="programacion">Programación</div>
+      <div class="subject" data-id="proc_man1" data-req="estatica">Procesos de Manufactura I</div>
+      <div class="subject" data-id="org_sistemas" data-req="ing_metodos">Organización de Sistemas Productivos</div>
+      <div class="subject" data-id="vida">Vida y Trascendencia</div>
+      <div class="subject" data-id="ingles_b1" data-req="ingles_a2">Inglés B1</div>
+    </section>
+
+    <!-- 4 -->
+    <section class="semester" data-sem="4">
+      <h2>4to Semestre</h2>
+      <div class="subject" data-id="metodos_num" data-req="ecuaciones">Métodos Numéricos</div>
+      <div class="subject" data-id="quimica_ind" data-req="quimica">Química Industrial</div>
+      <div class="subject" data-id="estadistica" data-req="proc_man1">Estadística</div>
+      <div class="subject" data-id="contabilidad">Contabilidad</div>
+      <div class="subject" data-id="practicas_com" data-req="vida">Prácticas de Servicio Comunitario</div>
+    </section>
+
+    <!-- 5 -->
+    <section class="semester" data-sem="5">
+      <h2>5to Semestre</h2>
+      <div class="subject" data-id="termodinamica" data-req="quimica_ind">Termodinámica</div>
+      <div class="subject" data-id="energia_medio">Energía y Medio Ambiente</div>
+      <div class="subject" data-id="ing_economica" data-req="contabilidad">Ingeniería Económica</div>
+      <div class="subject" data-id="itinerario_5">Itinerario (optativo)</div>
+    </section>
+
+    <!-- 6 -->
+    <section class="semester" data-sem="6">
+      <h2>6to Semestre</h2>
+      <div class="subject" data-id="trans_calor" data-req="termodinamica">Transferencia de Calor y Fluidos</div>
+      <div class="subject" data-id="meca_mat1" data-req="estatica">Mecánica de Materiales I</div>
+      <div class="subject" data-id="inv_oper" data-req="estadistica">Investigación de Operaciones</div>
+      <div class="subject" data-id="ing_prod" data-req="org_sistemas">Ingeniería de la Producción</div>
+      <div class="subject" data-id="itinerario_6">Itinerario (optativo)</div>
+    </section>
+
+    <!-- 7 -->
+    <section class="semester" data-sem="7">
+      <h2>7mo Semestre</h2>
+      <div class="subject" data-id="seguridad_salud">Seguridad Industrial y Salud Ocupacional</div>
+      <div class="subject" data-id="logistica" data-req="ing_prod">Logística</div>
+      <div class="subject" data-id="estrategia" data-req="ing_economica">Estrategia Empresarial</div>
+      <div class="subject" data-id="proyectos" data-req="estrategia">Proyectos</div>
+      <div class="subject" data-id="practicas_pre" data-req="proyectos">Prácticas Pre-profesionales</div>
+    </section>
+
+    <!-- 8 -->
+    <section class="semester" data-sem="8">
+      <h2>8vo Semestre</h2>
+      <div class="subject" data-id="legislacion">Legislación Industrial y Societaria</div>
+      <div class="subject" data-id="disenio_prod" data-req="meca_mat1">Diseño de Productos y Servicios</div>
+      <div class="subject" data-id="simulacion" data-req="inv_oper,estadistica">Simulación de Procesos</div>
+      <div class="subject" data-id="gestion_talento">Gestión del Talento Humano</div>
+      <div class="subject" data-id="integracion" data-req="practicas_pre,proyectos">Integración Curricular</div>
+    </section>
+  </main>
+
+  <footer class="footnote">
+    <small>
+      Notas: esta malla replica e interpreta el diagrama que compartiste. Si algún prerrequisito
+      necesita ajuste, puedes editar los <code>data-req</code> del HTML.
+    </small>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
